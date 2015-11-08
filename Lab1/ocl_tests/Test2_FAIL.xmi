@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:DomainModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:views="http://www.example.org/views"
+    xsi:schemaLocation="http://www.example.org/views ../model/views.ecore">
+  <namedtypes
+      xsi:type="views:DataType"
+      name="Integer"/>
+  <classes name="Mainclass"
+      superclass="//@classes.0">
+    <properties
+        isID="true"
+        lowerBound="1"
+        upperBound="1"
+        type="//@namedtypes.0"
+        name="Key"/>
+  </classes>
+  <classes name="Subclass"
+      superclass="//@classes.0"/>
+</views:DomainModel>
