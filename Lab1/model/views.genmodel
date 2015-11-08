@@ -46,6 +46,7 @@
     </genClasses>
     <genClasses ecoreClass="views.ecore#//Literal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute views.ecore#//Literal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute views.ecore#//Literal/value"/>
     </genClasses>
     <genClasses ecoreClass="views.ecore#//ViewModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference views.ecore#//ViewModel/viewgroup"/>
