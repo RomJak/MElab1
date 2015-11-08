@@ -50,4 +50,71 @@
   <eClassifiers xsi:type="ecore:EClass" name="Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewgroup" upperBound="-1"
+        eType="#//ViewGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="View" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WelcomeViewGroup" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startView" eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//Class.1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassIndexView" eSuperTypes="#//View"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassOperationView" eSuperTypes="#//View">
+    <eOperations name="Create">
+      <eParameters name="obj" eType="#//Class"/>
+    </eOperations>
+    <eOperations name="Read" eType="#//Class">
+      <eParameters name="obj" eType="#//Class"/>
+    </eOperations>
+    <eOperations name="Update" eType="#//Class">
+      <eParameters name="obj" eType="#//Class"/>
+    </eOperations>
+    <eOperations name="Delete">
+      <eParameters name="obj" eType="#//Class"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewelement" upperBound="-1"
+        eType="#//ViewElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definedForClass" lowerBound="1"
+        eType="#//Class.1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementID" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementGroups">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewelement" upperBound="-1"
+        eType="#//ViewElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="header" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyElements" abstract="true" eSuperTypes="#//ViewElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationElements" eSuperTypes="#//ViewElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" abstract="true" eSuperTypes="#//PropertyElements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShortText" eSuperTypes="#//Text"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongText" eSuperTypes="#//Text"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTimePicker" eSuperTypes="#//PropertyElements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//PropertyElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectionitem" upperBound="-1"
+        eType="#//SelectionItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectionItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteralItem"/>
 </ecore:EPackage>
