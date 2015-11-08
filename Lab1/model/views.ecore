@@ -124,11 +124,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="startView" eType="#//View"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//Class"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="NoSelfInheritance ClassNameIsUnique IdPropertyBoundIsOneToOne"/>
-    </eAnnotations>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ClassIndexView" eSuperTypes="#//View"/>
   <eClassifiers xsi:type="ecore:EClass" name="ClassOperationView" eSuperTypes="#//View">
     <eOperations name="Create">
@@ -172,11 +167,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//PropertyElements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectionitem" upperBound="-1"
         eType="#//SelectionItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationliteralitem"
+        upperBound="-1" eType="#//EnumerationLiteralItem" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelectionItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteralItem" eSuperTypes="#//SelectionItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enum"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteralItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
   </eClassifiers>
 </ecore:EPackage>

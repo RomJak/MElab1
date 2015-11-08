@@ -65,7 +65,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference views.ecore#//ViewGroup/startView"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference views.ecore#//ViewGroup/class"/>
     </genClasses>
-    <genClasses ecoreClass="views.ecore#//Class.1"/>
     <genClasses ecoreClass="views.ecore#//ClassIndexView"/>
     <genClasses ecoreClass="views.ecore#//ClassOperationView">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference views.ecore#//ClassOperationView/viewelement"/>
@@ -103,12 +102,13 @@
     </genClasses>
     <genClasses ecoreClass="views.ecore#//Selection">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference views.ecore#//Selection/selectionitem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference views.ecore#//Selection/enumerationliteralitem"/>
     </genClasses>
     <genClasses ecoreClass="views.ecore#//SelectionItem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute views.ecore#//SelectionItem/value"/>
     </genClasses>
     <genClasses ecoreClass="views.ecore#//EnumerationLiteralItem">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute views.ecore#//EnumerationLiteralItem/enum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute views.ecore#//EnumerationLiteralItem/literal"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
